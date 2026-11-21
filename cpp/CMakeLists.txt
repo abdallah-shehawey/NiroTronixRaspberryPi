@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(NiroTronixMotor VERSION 0.1.0 LANGUAGES CXX)
+project(NiroTronixMotor VERSION 0.1.1 LANGUAGES CXX)
 
 include(GNUInstallDirs)
 
