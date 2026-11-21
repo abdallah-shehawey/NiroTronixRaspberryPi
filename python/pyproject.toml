@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=70.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nirotronix-motor"
+version = "0.1.0"
+description = "25 kHz PWM/DIR control for NiroTronix motor drivers on Raspberry Pi"
+requires-python = ">=3.9"
+dependencies = ["gpiozero>=2"]
+authors = [{name = "NiroTronix"}]
+
+[project.readme]
+content-type = "text/markdown"
+text = """
+Python control for NiroTronix MD-series brushed DC motor drivers on Raspberry Pi.
+The library uses 25 kHz hardware PWM for speed and gpiozero for direction.
+
+Follow the [Raspberry Pi wiring guide](https://nirotronix.com/raspberry-pi-dc-motor-driver-wiring/)
+to configure hardware PWM and check the power-up order before connecting motor power.
+Run `nirotronix-motor` for the interactive demo. In your own application, import
+`Motor`, `PINS`, and `find_pwm_chip` from `nirotronix_motor`.
+
+The package has been checked with simulated PWM and GPIO. A test with a
+physical Raspberry Pi and NiroTronix driver remains pending.
+"""
+
+[project.urls]
+Documentation = "https://nirotronix.com/raspberry-pi-dc-motor-driver-wiring/"
+Source = "https://github.com/abdallah-shehawey/NiroTronixRaspberryPi"
+
+[project.scripts]
+nirotronix-motor = "nirotronix_motor:main"
+
+[tool.setuptools]
+py-modules = ["nirotronix_motor"]
