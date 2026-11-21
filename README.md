@@ -47,6 +47,31 @@ cmake --build build
 
 Use `./build/motor_demo --motor 2` for the second channel. To install the library for other projects, run `cmake --install build --prefix /your/install/path`, set `CMAKE_PREFIX_PATH` to that prefix, and use `find_package(NiroTronixMotor CONFIG REQUIRED)` before linking `NiroTronix::Motor`.
 
+### Install with vcpkg
+
+In your project, add the following entry under `registries` in `vcpkg-configuration.json`. Keep your existing default registry. For a new project, start with `vcpkg new --application`.
+
+```json
+{
+  "kind": "git",
+  "repository": "https://github.com/abdallah-shehawey/NiroTronixRaspberryPi.git",
+  "baseline": "07b5efe23d39e749fe82aa74a31d65b34589ae2c",
+  "packages": ["nirotronix-motor"]
+}
+```
+
+```sh
+vcpkg add port nirotronix-motor
+vcpkg install
+```
+
+Build on Linux with the vcpkg CMake toolchain and link the installed library.
+
+```cmake
+find_package(NiroTronixMotor CONFIG REQUIRED)
+target_link_libraries(my_app PRIVATE NiroTronix::Motor)
+```
+
 ## Demo controls and hardware status
 
 Both demos start with PWM off. `S` turns PWM off, `A` confirms that the shaft has stopped, `F` or `R` starts one direction at 25% duty, and `Q` exits. Stop the motor and wait for the shaft to come to rest before reversing. Keep a motor-power switch within reach. A process crash or `kill -9` can leave the kernel PWM running.
