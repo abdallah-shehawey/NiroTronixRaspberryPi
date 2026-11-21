@@ -12,4 +12,5 @@ vcpkg_cmake_configure(
 )
 vcpkg_cmake_install()
 vcpkg_cmake_config_fixup(PACKAGE_NAME NiroTronixMotor CONFIG_PATH lib/cmake/NiroTronixMotor)
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/lib")
 set(VCPKG_POLICY_SKIP_COPYRIGHT_CHECK enabled)

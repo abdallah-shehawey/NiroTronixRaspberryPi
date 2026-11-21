@@ -1,6 +1,7 @@
 {
   "name": "nirotronix-motor",
   "version-semver": "0.1.0",
+  "port-version": 1,
   "description": "Header-only C++ library for NiroTronix motor drivers on Raspberry Pi",
   "homepage": "https://github.com/abdallah-shehawey/NiroTronixRaspberryPi",
   "license": null,
