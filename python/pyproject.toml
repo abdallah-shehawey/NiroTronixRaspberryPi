@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=70.1"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -9,6 +9,17 @@ description = "25 kHz PWM/DIR control for NiroTronix motor drivers on Raspberry 
 requires-python = ">=3.9"
 dependencies = ["gpiozero>=2"]
 authors = [{name = "NiroTronix"}]
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["raspberry-pi", "motor-driver", "pwm", "dc-motor", "gpio", "nirotronix"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: System :: Hardware",
+]
 
 [project.readme]
 content-type = "text/markdown"
