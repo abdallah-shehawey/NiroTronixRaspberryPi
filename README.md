@@ -6,11 +6,13 @@ See the [wiring guide](https://nirotronix.com/raspberry-pi-dc-motor-driver-wirin
 
 ## Python
 
+Install [nirotronix-motor from PyPI](https://pypi.org/project/nirotronix-motor/) on Raspberry Pi OS.
+
 ```sh
 sudo apt install python3-venv python3-gpiozero python3-lgpio
 python3 -m venv --system-site-packages .venv
 . .venv/bin/activate
-python -m pip install https://github.com/abdallah-shehawey/NiroTronixRaspberryPi/releases/download/v0.1.0/nirotronix_motor-0.1.0-py3-none-any.whl
+python -m pip install nirotronix-motor
 nirotronix-motor
 ```
 
